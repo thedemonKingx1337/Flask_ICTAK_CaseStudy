@@ -58,7 +58,7 @@ def predict():
         print("Error making prediction:", e)
         pred_res = "Prediction failed. Please try again later."
 
-    return render_template('index.html', pred_res=pred_res)
+    return render_template('result.html', pred_res=pred_res)
 
 
 if __name__ == '__main__':
