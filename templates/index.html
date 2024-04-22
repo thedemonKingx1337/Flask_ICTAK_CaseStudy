@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Purchase Prediction</title>
+    <link rel="stylesheet" href="../static/style.css">
+    
+</head>
+
+<body>
+      
+    <form action="/predict" method="post">
+
+      <label for="Gender">Gender:</label>
+      <input type="text" id="Gender" name="Gender" required><br>
+      <label for="Age">Age:</label>
+      <input type="text" id="Age" name="Age" required><br>
+      <label for="EstimatedSalary">Estimated Salary:</label>
+      <input type="text" id="EstimatedSalary" name="EstimatedSalary" required><br>
+      <button type="submit">Predict</button><br>
+        
+    </form>
+    {% if pred_res == "Will Not Purchase" %}
+    <h2>No purchase</h2>
+    {% elif pred_res == "Will Purchase" %}
+    <h2>Purchase</h2>
+    {% endif %}
+</body> 
+</html>
