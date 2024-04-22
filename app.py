@@ -34,7 +34,7 @@ def preprocess_input(gender, age, estimated_salary):
 
 @app.route('/')
 def home():
-    return render_template('index.html', pred_res=None)
+    return render_template('index.html')
 
 
 @app.route('/predict', methods=['POST'])
