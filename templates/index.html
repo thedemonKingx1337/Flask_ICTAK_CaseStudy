@@ -17,10 +17,8 @@
         <button type="submit">Predict</button><br>
     </form>
 
-    {% if pred_res == "Will Not Purchase" %}
-        <h2>No purchase</h2>
-    {% elif pred_res == "Will Purchase" %}
-        <h2>Purchase</h2>
+    {% if pred_res is not none %}
+        <h2>{{ pred_res }}</h2>
     {% endif %}
-</body> 
+</body>
 </html>

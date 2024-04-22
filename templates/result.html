@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Purchase Prediction Result</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>Product Purchase Prediction Result</h1>
+    <div>
+        {% if pred_res == "Will Not Purchase" %}
+            <h2>No purchase</h2>
+        {% elif pred_res == "Will Purchase" %}
+            <h2>Purchase</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
