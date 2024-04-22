@@ -3,8 +3,13 @@
 from flask import Flask, request, render_template
 import pickle
 import numpy as np
+import warnings
+from sklearn.exceptions import InconsistentVersionWarning
 
 app = Flask(__name__)
+
+# Suppress warning about inconsistent scikit-learn versions
+warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
 
 # Load the trained model from file
 with open('model.pkl', 'rb') as model_file:
@@ -35,7 +40,7 @@ def predict():
     # Convert prediction to human-readable format
     pred_res = "Will Purchase" if prediction[0] == 1 else "Will Not Purchase"
 
-    return render_template('result.html', pred_res=pred_res)
+    return render_template('index.html', pred_res=pred_res)
 
 
 if __name__ == '__main__':
